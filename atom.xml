@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gorillaseven.github.io/"/>
-  <updated>2019-08-14T11:29:27.094Z</updated>
+  <updated>2019-08-29T12:37:41.041Z</updated>
   <id>http://gorillaseven.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Config-Center说明</title>
+    <link href="http://gorillaseven.github.io/2019/08/29/Config-Center%E8%AF%B4%E6%98%8E/"/>
+    <id>http://gorillaseven.github.io/2019/08/29/Config-Center说明/</id>
+    <published>2019-08-29T12:12:10.000Z</published>
+    <updated>2019-08-29T12:37:41.041Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/images/background1.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-MySqL说明&quot;&gt;&lt;a href=&quot;#1-MySqL说明&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="H5" scheme="http://gorillaseven.github.io/categories/H5/"/>
+    
+    
+      <category term="H5-chess" scheme="http://gorillaseven.github.io/tags/H5-chess/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis分区</title>
