@@ -612,7 +612,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  257
+                  2.8k
                 </span>
               
 
@@ -628,7 +628,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  15
                 </span>
               
             </div>
@@ -653,20 +653,79 @@
           
             <h2 id="1-MySqL说明"><a href="#1-MySqL说明" class="headerlink" title="1.MySqL说明"></a>1.MySqL说明</h2><h3 id="1-游戏"><a href="#1-游戏" class="headerlink" title="1).游戏"></a>1).游戏</h3><p>游戏状态(status)需按渠道进行独立控制;其他控制项:标签(tag),在线人数(line_base_number),在人数波动最小值(line_min_volatility),在线人数波动最大值(line_max_volatility)则直接由一组控制项控制；<br>    因此，游戏拆分成两个表:</p>
 <ol>
-<li>基础数据表(t_game_base)<br><code>id,channel,type,name,status,create_time</code>.</li>
-<li>游戏配置表(t_game_config)<br><code>id,game_type,tag,line_base_number,line_min_volatility,line_max_volatility,flag</code>.</li>
+<li>基础数据表(t_game_base)<br><code>id,channel,type,name,status,create_time,edit_time,editor</code>.</li>
+<li>游戏配置表(t_game_config)<br><code>id,game_type,tag,line_base_number,line_min_volatility,line_max_volatility,flag,create_time,edit_time,editor</code>.</li>
+<li>游戏实体表(t_game)<br><code>id,type,name</code>.</li>
 </ol>
 <h3 id="2-房间"><a href="#2-房间" class="headerlink" title="2).房间"></a>2).房间</h3><p>房间状态(status)需要按照渠道进行独立控制；其他一些房间的基本属性是通用的也不推荐进行个性化设置，因此房间也拆分成两个表：</p>
 <ol>
-<li>基础数据表(t_room_base)<br><code>id,channel,game_type,type,status,name,create_time</code>.</li>
-<li>游戏配置表(t_room_config)<br><code>id,room_type,room_usage,room_limit,ratio,notice,tax,min_count,max_count,match_delay,robot_min_count,robot_max_count,max_round,poker_count,gendealer_type,gen_dealer_choices,valid_wagers,single_max_hong,virtual_count,role_max_wager,ext_data</code>.</li>
+<li>基础数据表(t_room_base)<br><code>id,channel,game_type,type,status,name,create_time,edit_time,editor</code>.</li>
+<li>房间配置表(t_room_config)<br><code>id,room_type,room_usage,room_limit,ratio,notice,tax,min_count,max_count,match_delay,robot_min_count,robot_max_count,max_round,poker_count,gendealer_type,gen_dealer_choices,valid_wagers,single_max_hong,virtual_count,role_max_wager,ext_data,create_time,edit_time,editor</code>.</li>
+<li>房间实体表(t_room)<br><code>id,game_type,type,name</code>.</li>
 </ol>
-<h3 id="3-平台"><a href="#3-平台" class="headerlink" title="3).平台"></a>3).平台</h3><p>平台级控制项分为两类，一类是杀数控制，一类是各项平台级配置，因此分为两个表：</p>
+<h3 id="3-平台"><a href="#3-平台" class="headerlink" title="3).平台"></a>3).平台</h3><p>平台分成平台配置项和平台线路管理和转账线路管理，因此分为三个表：</p>
 <ol>
-<li>杀数配置表(t_platform_kill)<br><code>id,kill_number,kill_region_number,kill_role_number,kill_continuous_win_rate_upper_limit,kill_continuous_win_rate_lower_limit</code></li>
-<li>系统配置表(t_platform_setting)<br><code>id,withdraw,maintain,client_line_list,platform_line_list,platform_transfer_list</code></li>
+<li>配置表(t_platform_setting)<br><code>id,setting_key,setting_value,setting_desc,allow_delete,create_time,edit_time,editor</code></li>
+<li>线路表(t_platform_line)<br><code>line_no,line_client,line_platform,create_time,edit_time,editor</code>.</li>
+<li>转账线路表(t_platform_transfer)<br><code>id,platform_name,platform_remote_url,enable,create_time,edit_time,editor</code>.</li>
 </ol>
-
+<h2 id="2-接口说明"><a href="#2-接口说明" class="headerlink" title="2.接口说明"></a>2.接口说明</h2><p>该服务提供三种类型的配置接口:平台配置接口、游戏配置接口、房间配置接口.</p>
+<h3 id="1-游戏配置接口"><a href="#1-游戏配置接口" class="headerlink" title="1).游戏配置接口"></a>1).游戏配置接口</h3><p>1.添加 游戏基础信息<code>BaseResponse&lt;GameBase&gt; saveGameBase(GameBase gameBase)</code><br>2.添加 游戏配置信息<code>BaseResponse&lt;GameConfig&gt; saveGameConfig(GameConfig gameConfig)</code><br>3.更新 游戏状态<code>BaseResponse&lt;GameBase&gt; updateGameStatus(GameBase gameBase)</code><br>4.更新 游戏配置<code>BaseResponse&lt;GameConfig&gt; updateGameConfig(GameConfig gameConfig)</code><br>5.删除 基础游戏 <code>BaseResponse&lt;GameBase&gt; deleteGameBase(GameBase gameBase)</code><br>6.删除 游戏配置<code>BaseResponse&lt;GameConfig&gt; deleteGameConfig(GameConfig gameConfig)</code><br>7.分页查询游戏<code>PageResponse&lt;List&lt;GameBase&gt;&gt; searchGames(GameSearchRequest request)</code><br>8.查询游戏配置<code>PageResponse&lt;List&lt;GameConfig&gt;&gt; searchGameConfigs(GameConfigSearchRequest request)</code><br>9.检测是否有此游戏<code>BaseResponse&lt;Void&gt; checkGame(Long channelUid,String gameType)</code><br>10.检测是否有此游戏配置<code>BaseResponse&lt;Boolean&gt; checkGameConfig(String gameType)</code></p>
+<h3 id="2-房间配置接口"><a href="#2-房间配置接口" class="headerlink" title="2).房间配置接口"></a>2).房间配置接口</h3><p>1.添加房间基础信息 <code>BaseResponse&lt;RoomBase&gt; saveRoomBase(RoomBase roomBase)</code><br>2.添加房间配置信息<code>BaseResponse&lt;RoomConfig&gt; saveRoomConfig(RoomConfig roomConfig)</code><br>3.更新房间状态<code>BaseResponse&lt;RoomBase&gt; updateRoomStatus(RoomBase roomBase)</code><br>4.更新房间配置<code>BaseResponse&lt;RoomConfig&gt; updateRoomConfig(RoomConfig roomConfig)</code><br>5.分页查询房间信息<code>PageResponse&lt;List&lt;RoomBase&gt;&gt; searchRoomBases(RoomSearchRequest request)</code><br>6.查询房间配置<code>PageResponse&lt;List&lt;RoomConfig&gt;&gt; searchRoomConfigs(RoomConfigSearchRequest request)</code><br>7.检测是否有此房间<code>BaseResponse&lt;Boolean&gt; checkRoom(Long channelUid,String roomType)</code><br>8.检测是否有此游戏配置 <code>BaseResponse&lt;Boolean&gt; checkRoomConfig(String roomType)</code><br>9.删除 基础房间 <code>BaseResponse&lt;RoomBase&gt; deleteRoomBase(RoomBase roomBase)</code><br>10.删除 游戏配置<code>BaseResponse&lt;RoomConfig&gt; deleteRoomConfig(RoomConfig roomConfig)</code></p>
+<h3 id="3-平台配置接口"><a href="#3-平台配置接口" class="headerlink" title="3).平台配置接口"></a>3).平台配置接口</h3><p>1.存储平台配置 <code>BaseResponse&lt;PlatformSetting&gt; savePlatformSetting(PlatformSetting platformSetting)</code><br>2.更新平台配置 <code>BaseResponse&lt;Void&gt; updatePlatformSetting(PlatformSetting platformSetting)</code><br>3.删除平台配置  <code>BaseResponse&lt;Integer&gt; deletePlatformSettingById(Long id)</code><br>4.批量删除平台配置 <code>BaseResponse&lt;Integer&gt; batchDeletePlatformSettingById(List&lt;Long&gt; idList)</code><br>5.获取平台配置 by id <code>BaseResponse&lt;PlatformSetting&gt; getPlatformSettingById(Long id)</code><br>6.获取平台配置 by key <code>BaseResponse&lt;PlatformSetting&gt; getPlatformSettingByKey(String key)</code><br>7.获取所有配置项 <code>BaseResponse&lt;List&lt;PlatformSetting&gt;&gt; getPlatformSettings(BaseRequest request)</code><br>8.获取平台配置key对应说明 <code>BaseResponse&lt;List&lt;PlatformSettingKeyDesc&gt;&gt; getPlatformSettingKeyDescs()</code><br>9.存储平台线路 <code>BaseResponse&lt;PlatformLine&gt; savePlatformLine(PlatformLine platformLine)</code><br>10.更新平台线路 <code>BaseResponse&lt;Void&gt; updatePlatformLine(PlatformLine platformLine)</code><br>11.删除平台线路 <code>BaseResponse&lt;Integer&gt; deletePlatformLineByLineNo(Long lineNo)</code><br>12.批量删除线路 <code>BaseResponse&lt;Integer&gt; batchDeletePlatformLineByLineNo(List&lt;Long&gt; lineNoList)</code><br>13.获取平台线路 by 线路编号  <code>BaseResponse&lt;PlatformLine&gt; getPlatformLine(Long lineNo)</code><br>14.获取所有平台线路 <code>BaseResponse&lt;List&lt;PlatformLine&gt;&gt; getPlatformLines(BaseRequest request)</code><br>15.存储转账线路 <code>BaseResponse&lt;PlatformTransfer&gt; savePlatformTransfer(PlatformTransfer platformTransfer)</code><br>16.更新转账线路 <code>BaseResponse&lt;Void&gt; updatePlatformTransfer(PlatformTransfer platformTransfer)</code><br>17.获取转账线路 by Id <code>BaseResponse&lt;PlatformTransfer&gt; getPlatformTransfer(Long id)</code><br>18.删除转账线路by id <code>BaseResponse&lt;Integer&gt; deletePlatformTransfer(Long id)</code><br>19.批量删除转账线路 <code>BaseResponse&lt;Integer&gt; batchDeletePlatformTransferById(List&lt;Long&gt; idList)</code><br>20.获取所有转账线路 <code>BaseResponse&lt;List&lt;PlatformTransfer&gt;&gt; getPlatformTransfers(BaseRequest request)</code></p>
+<h2 id="3-菜单权限说明"><a href="#3-菜单权限说明" class="headerlink" title="3.菜单权限说明"></a>3.菜单权限说明</h2><h3 id="1-菜单"><a href="#1-菜单" class="headerlink" title="1).菜单"></a>1).菜单</h3><pre><code>  {
+  &quot;application&quot;:&quot;configcenter&quot;,
+  &quot;version&quot;:&quot;1&quot;,
+  &quot;menu&quot;:[
+    {&quot;menuKey&quot;:&quot;configcenter.systemsetting&quot;,&quot;title&quot;:&quot;系统配置&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/systemsetting&quot;,&quot;parent&quot;:&quot;configcenter&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;系统配置&quot;,&quot;sorts&quot;:&quot;0&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.systemsetting.platformmanagement&quot;,&quot;title&quot;:&quot;平台管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/platformmanagement&quot;,&quot;parent&quot;:&quot;configcenter.systemsetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;系统配置/平台管理&quot;,&quot;sorts&quot;:&quot;0&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.systemsetting.linemanagement&quot;,&quot;title&quot;:&quot;线路管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/linemanagement&quot;,&quot;parent&quot;:&quot;configcenter.systemsetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;系统配置/线路管理&quot;,&quot;sorts&quot;:&quot;1&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.systemsetting.transfermanagement&quot;,&quot;title&quot;:&quot;转账线路管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/transfermanagement&quot;,&quot;parent&quot;:&quot;configcenter.systemsetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;系统配置/转账线路管理&quot;,&quot;sorts&quot;:&quot;2&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.gamesetting&quot;,&quot;title&quot;:&quot;游戏配置&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/gamesetting&quot;,&quot;parent&quot;:&quot;configcenter&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;游戏配置&quot;,&quot;sorts&quot;:&quot;1&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.gamesetting.gamemanagement&quot;,&quot;title&quot;:&quot;游戏管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/gamemanagement&quot;,&quot;parent&quot;:&quot;configcenter.gamesetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;游戏配置/游戏管理&quot;,&quot;sorts&quot;:&quot;0&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement&quot;,&quot;title&quot;:&quot;游戏配置管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/gameconfigmanagement&quot;,&quot;parent&quot;:&quot;configcenter.gamesetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;游戏配置/游戏配置管理&quot;,&quot;sorts&quot;:&quot;1&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.roomsetting&quot;,&quot;title&quot;:&quot;房间配置&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/roomsetting&quot;,&quot;parent&quot;:&quot;configcenter&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;房间配置&quot;,&quot;sorts&quot;:&quot;2&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.roomsetting.roommanagement&quot;,&quot;title&quot;:&quot;房间管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/roommanagement&quot;,&quot;parent&quot;:&quot;configcenter.roomsetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;房间配置/房间管理&quot;,&quot;sorts&quot;:&quot;0&quot;},
+    {&quot;menuKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement&quot;,&quot;title&quot;:&quot;房间配置管理&quot;,&quot;icon&quot;:&quot;user&quot;,&quot;url&quot;:&quot;/roomconfigmanagement&quot;,&quot;parent&quot;:&quot;configcenter.roomsetting&quot;,&quot;display&quot;:&quot;0&quot;,&quot;mdesc&quot;:&quot;房间配置/房间配置管理&quot;,&quot;sorts&quot;:&quot;1&quot;}
+  ]
+}</code></pre><h3 id="2-权限"><a href="#2-权限" class="headerlink" title="2).权限"></a>2).权限</h3><pre><code>{
+    &quot;application&quot;:&quot;configcenter&quot;,
+    &quot;version&quot;:&quot;1&quot;,
+    &quot;function&quot;:[
+      {&quot;funKey&quot;:&quot;configcenter&quot;,&quot;funName&quot;:&quot;配置中心&quot;,&quot;parentKey&quot;:&quot;&quot;,&quot;funType&quot;:&quot;system&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting&quot;,&quot;funName&quot;:&quot;系统配置&quot;,&quot;parentKey&quot;:&quot;configcenter&quot;,&quot;funType&quot;:&quot;group&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.platformmanagement&quot;,&quot;funName&quot;:&quot;平台管理&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.systemmanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.systemmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.systemmanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.systemmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.systemmanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.systemmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.linemanagement&quot;,&quot;funName&quot;:&quot;线路管理&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.linemanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.linemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.linemanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.linemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.linemanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.linemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.transfermanagement&quot;,&quot;funName&quot;:&quot;转账线路管理&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.transfermanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.transfermanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.transfermanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.transfermanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.systemsetting.transfermanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.systemsetting.transfermanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting&quot;,&quot;funName&quot;:&quot;游戏配置&quot;,&quot;parentKey&quot;:&quot;configcenter&quot;,&quot;funType&quot;:&quot;group&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gamemanagement&quot;,&quot;funName&quot;:&quot;游戏管理&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gamemanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gamemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gamemanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gamemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gamemanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gamemanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement&quot;,&quot;funName&quot;:&quot;游戏配置管理&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.gamesetting.gameconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting&quot;,&quot;funName&quot;:&quot;房间配置&quot;,&quot;parentKey&quot;:&quot;configcenter&quot;,&quot;funType&quot;:&quot;group&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roommanagement&quot;,&quot;funName&quot;:&quot;房间管理&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roommanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roommanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roommanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roommanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roommanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roommanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement&quot;,&quot;funName&quot;:&quot;房间配置管理&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting&quot;,&quot;funType&quot;:&quot;page&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement:delete&quot;,&quot;funName&quot;:&quot;删除&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement:edit&quot;,&quot;funName&quot;:&quot;编辑&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;},
+      {&quot;funKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement:add&quot;,&quot;funName&quot;:&quot;新增&quot;,&quot;parentKey&quot;:&quot;configcenter.roomsetting.roomconfigmanagement&quot;,&quot;funType&quot;:&quot;action&quot;,&quot;notes&quot;:&quot;&quot;}
+    ]
+  }</code></pre>
           
         
       
@@ -1068,7 +1127,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.3k</span>
+    <span title="Site words total count">3.8k</span>
   
 </div>
 
