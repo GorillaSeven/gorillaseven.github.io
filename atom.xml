@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gorillaseven.github.io/"/>
-  <updated>2019-09-08T07:01:18.234Z</updated>
+  <updated>2019-10-22T09:42:51.071Z</updated>
   <id>http://gorillaseven.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot设置Sytemd Service</title>
+    <link href="http://gorillaseven.github.io/2019/10/21/SpringBoot%E8%AE%BE%E7%BD%AESytemd%20Service/"/>
+    <id>http://gorillaseven.github.io/2019/10/21/SpringBoot设置Sytemd Service/</id>
+    <published>2019-10-21T12:12:10.000Z</published>
+    <updated>2019-10-22T09:42:51.071Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-添加依赖&quot;&gt;&lt;a href=&quot;#1-添加依赖&quot; class=&quot;headerlink&quot; title=&quot;1.添加依赖&quot;&gt;&lt;/a&gt;1.添加依赖&lt;/h2&gt;&lt;pre&gt;&lt;code&gt; &amp;lt;plugin&amp;gt;
+   
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://gorillaseven.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://gorillaseven.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos设置定时任务</title>
+    <link href="http://gorillaseven.github.io/2019/10/21/Centos%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://gorillaseven.github.io/2019/10/21/Centos设置定时任务/</id>
+    <published>2019-10-21T06:45:10.000Z</published>
+    <updated>2019-10-22T01:12:10.949Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-安装crontabs服务并设置开机启动&quot;&gt;&lt;a href=&quot;#1-安装crontabs服务并设置开机启动&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://gorillaseven.github.io/categories/linux/"/>
+    
+    
+      <category term="定时任务" scheme="http://gorillaseven.github.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>webconsole说明</title>
