@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Typora语法]]></title>
+    <url>%2F2020%2F04%2F02%2FTypora%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Typora</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo基础命令详解]]></title>
+    <url>%2F2020%2F04%2F02%2FHexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[Hexo框架可以帮助我们快速搭建一个属于自己的博客网站,熟悉Hexo框架的命令有利于我们管理博客 1.inithexo init命令用于初始化本地文件夹为网站的根目录 1hexo init [folder] folder可选参数，用于指定初始化目录的路径，如无指定则默认为当前目录 2.newhexo new 命令用于创建新文章，一般可以简写为hexo n 1hexo new [layout] &lt;title&gt; layout 可选参数，用以指定文章类型，若无指定则默认由配置文件中的default_layout 选项决定 title 必填参数，用以指定文章标题，如果参数值中含有空格，则需要使用双引号包围 3.generatehexo generate 用于生成静态文件，一般可以简写成hexo g 1hexo generate -d 选项，指定生成后部署，与hexo d -g 等价 4.serverhexo server 命令用于启动本地服务器，一般可以简写成hexo s 1hexo server -p 选项，指定服务器端口，默认是4000 -i 选项，指定服务器的IP地址，more是0.0.0.0 -s 选项，静态模式，仅提供public文件夹中的文件并禁用文件监视 说明: 运行服务器前需要安装hexo-server插件 1npm install hexo-server --save 5.deployhexo deploy 命令用于部署网站，一般可以简写成hexo d 1hexo deploy -g选项，指定生成后部署，与hexo g -d等价 说明:部署前需要修改_config.yml配置文件，下面以git为进行说明: 12345deploy: type:git repo:&lt;repository url&gt; branch: master message: 自定义提交消息，默认是site update:&#123;&#123; now(&apos;YYYY-MM-DD HH:mm:ss&apos;) &#125;&#125; 6.cleanhexo clean命令用于清理缓存文件 1hexo clean 网站显示异常是可以尝试此操作 7.Option(1)hexo –safehexo --safe表示安全模式，用于禁用加载插件和脚本 (2)hexo –debughexo --debug表示调试模式，用于将消息详细记录到终端和debug.log文件 (3)hexo –silenthexo --silent表示静默模式，用于静默输出到终端]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown基础语法]]></title>
+    <url>%2F2020%2F04%2F02%2FMarkdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Markdown是一种纯文本格式的标记语言。通过简单的标记语法，他可以使普通的文本内容具有一定的格式。 1.标题在想要设置为标题的文字前面加 # 表示 一个 # 是一级标题，二个 # 是二级标题，依此类推，支持六级标题。 注: 标准语法一帮在#后跟个空格再写文字 示例: 123456# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题 效果如下: 这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题 2.字体 加粗 要加粗的文字左右分别用两个*号包起来 斜体 要倾斜的文字左右分别用一个*号包起来 斜体加粗 要倾斜和加粗的文字分别用三个*号包起来 删除线 要加删除线的文字左右分别用两个~包起来 示例: 1234**这是加粗的文字***这是倾斜的文字****这是斜体加粗的文字***~~这是加删除线的文字~~ 效果如下: 这是加粗的文字 这是倾斜的文字 这是斜体加粗的文字 这是加删除线的文字 3.引用在引用的文字前加&gt;即可。引用可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt; n个… 貌似可以一直加下去，但没什么用 示例: 123&gt;这是引用的内容&gt;&gt;这是引用的内容&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容 效果如下: 这是引用的内容 这是引用的内容 这是引用的内容 4.分割线三个或者三个以上的-或者*都可以 示例: 1234---***------******** 效果如下: 5.图片语法: 123![图片alt](图片地址&apos;&apos;图片title&apos;&apos;)图片alt就是显示图片下面的文字，相当于对图片的说明图片title是图片的标题，当鼠标移到图片上是显示的内容。可加可不加 示例: 12![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;) 效果如下: ![区块链](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg “区块链”) 6.超链接语法: 12[超链接名](超链接地址&quot;超链接title&quot;)title可加可不加 示例: 12[简书](http://jianshu.com)[百度](http://baidu.com) 效果如下: 简书百度 注: Markdown本身语法不支持链接在新页面打开,如果想要在新页面打开的话可以用html语言的a标签代替 123&lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a&gt;示例&lt;a href=&quot;https://www.baidu.com&quot; target=&quot;_blank&quot;&gt;百度&lt;/a&gt; 7.列表无序列表 语法: 无序列表用-+*任何一种都可以 1234- 列表内容+ 列表内容* 列表内容注：-+*跟内容之间都要有一个空格 效果如下: 列表内容 列表内容 列表内容 有序列表 数字加点 12341. 列表内容2. 列表内容3. 列表内容注：序号与内容之间要有空格 效果如下: 列表内容 列表内容 列表内容 列表嵌套 上一级和下一级之间敲三个空格即可 一级无序列表内容 二级无序列表内容 二级无序列表内容 二级无序列表内容 一级无序列表内容 二级有序列表内容 二级有序列表内容 二级有序列表内容 一级有序列表内容 二级无序列表内容 二级无序列表内容 二级无序列表内容 一级有序列表内容 二级有序列表内容 二级有序列表内容 二级有序列表内容 8.表格语法: 1234567891011表头|表头|表头---|:--:|---内容|内容|内容内容|内容|内容第二行分割表头和内容- 有一个就行，为了对齐,多加几个文字默认居左-两边加：表示文字居中-右边加：表示文字居右注：原生的语法两边都要用|包起来，此处省略 示例: 12345姓名|技能|排行--|:--:|--:|--刘备|哭|大哥关羽|打|二哥张飞|骂|三个 效果如下: 姓名 技能 排行 刘备 哭 大哥 关羽 打 二哥 张飞 骂 三个 9.代码语法: 单行代码:代码之间分别用一个`括起来 1`代码内容` 代码块之间分别用三个`括起来,且两边的反引号单独占一行 1​ 代码…代码…代码…​123```# 10.流程图 ​12345678st=&gt;start: 开始op=&gt;operation: My Operationcond=&gt;condition: Yes or No?e=&gt;endst-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op&amp; 123456789101112效果如下:```flowst=&gt;start: 开始op=&gt;operation: My Operationcond=&gt;condition: Yes or No?e=&gt;endst-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op&amp;]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SpringBoot设置Sytemd Service]]></title>
     <url>%2F2019%2F10%2F21%2FSpringBoot%E8%AE%BE%E7%BD%AESytemd%20Service%2F</url>
     <content type="text"><![CDATA[1.添加依赖 &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;executable&gt;true&lt;/executable&gt; &lt;/configuration&gt; &lt;/plugin&gt;2.赋值权限构建成jar包，并对生成的jar赋值权限。 chmod u+x xxx.jar3.创建系统服务进入/etc/systemd/system目录下，新建myapp.service文件，myapp与jar的名字尽量一致。myapp.service的内容如下： [Unit] Description=myapp After=syslog.target [Service] User=myapp ExecStart=/var/myapp/myapp.jar SuccessExitStatus=143 [Install] WantedBy=multi-user.target设置启动myapp.service; systemctl enable myapp.serviceExecStart中我们还可以配置JVM的配置。例如： -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=6002 -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError -Xms512M -Xmx4G后面我们就可以通过systemctl start|stop|status|restart的方式对springboot应用程序进行启动和关闭了，这是最优雅的方式了。]]></content>
