@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gorillaseven.github.io/"/>
-  <updated>2020-04-03T00:49:56.667Z</updated>
+  <updated>2020-06-03T07:10:40.522Z</updated>
   <id>http://gorillaseven.github.io/</id>
   
   <author>
@@ -15,6 +15,139 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>3.修改数据</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/3.%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/3.修改数据/</id>
+    <published>2020-06-03T07:02:29.000Z</published>
+    <updated>2020-06-03T07:10:40.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Insert&quot;&gt;&lt;a href=&quot;#1-Insert&quot; class=&quot;headerlink&quot; title=&quot;1.Insert&quot;&gt;&lt;/a&gt;1.Insert&lt;/h2&gt;&lt;p&gt;INSERT
+        
+      
+    
+    </summary>
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/categories/Sql/"/>
+    
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/tags/Sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.查询数据</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/2.%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/2.查询数据/</id>
+    <published>2020-06-03T06:22:29.000Z</published>
+    <updated>2020-06-03T07:02:38.971Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-基本查询&quot;&gt;&lt;a href=&quot;#1-基本查询&quot; class=&quot;headerlink&quot; title=&quot;1.基本查询&quot;&gt;&lt;/a&gt;1.基本查询&lt;/h2&gt;&lt;p&gt;使用Select查询的基本语句&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/categories/Sql/"/>
+    
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/tags/Sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1.关系模型</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/1.%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/1.关系模型/</id>
+    <published>2020-06-03T05:48:29.000Z</published>
+    <updated>2020-06-03T07:10:44.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;数据库参照数据结构来组织,存储和管理数据。数据库模型主要分为:&lt;/p&gt;
+&lt;p&gt;。 层次模型&lt;/p&gt;
+&lt;p&gt;。 网状模型&lt;/p&gt;
+&lt;p&gt;。 关系模型&lt;/p&gt;
+&lt;h2 id=&quot;1-主键&quot;&gt;&lt;a href=&quot;#1-主键&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/categories/Sql/"/>
+    
+    
+      <category term="Sql" scheme="http://gorillaseven.github.io/tags/Sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VAssistX快捷键</title>
+    <link href="http://gorillaseven.github.io/2020/05/06/2020-05-06-VAssistX%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://gorillaseven.github.io/2020/05/06/2020-05-06-VAssistX快捷键/</id>
+    <published>2020-05-06T06:45:10.000Z</published>
+    <updated>2020-05-06T11:54:47.059Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;函数跳转&quot;&gt;&lt;a href=&quot;#函数跳转&quot; class=&quot;headerlink&quot; title=&quot;函数跳转&quot;&gt;&lt;/a&gt;函数跳转&lt;/h2&gt;&lt;p&gt;Alt + G - 函数定义与声明的跳转&lt;/p&gt;
+&lt;p&gt;Alt + O -
+        
+      
+    
+    </summary>
+    
+      <category term="VAssistX" scheme="http://gorillaseven.github.io/categories/VAssistX/"/>
+    
+    
+      <category term="VAssistX" scheme="http://gorillaseven.github.io/tags/VAssistX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://gorillaseven.github.io/2020/04/10/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/"/>
+    <id>http://gorillaseven.github.io/2020/04/10/机器人优化方案/</id>
+    <published>2020-04-10T08:56:50.351Z</published>
+    <updated>2020-05-25T05:14:34.947Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-机器人管理服务器&quot;&gt;&lt;a href=&quot;#1-机器人管理服务器&quot; class=&quot;headerlink&quot; title=&quot;1.机器人管理服务器&quot;&gt;&lt;/a&gt;1.机器人管理服务器&lt;/h2&gt;&lt;p&gt;​    需求:&lt;/p&gt;
+&lt;p&gt;一.把游戏分为低中高档位 1毛到5毛为低档
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Typora语法</title>
@@ -47,7 +180,7 @@
     <link href="http://gorillaseven.github.io/2020/04/02/Hexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
     <id>http://gorillaseven.github.io/2020/04/02/Hexo基础命令详解/</id>
     <published>2020-04-02T07:12:10.000Z</published>
-    <updated>2020-04-03T00:37:34.821Z</updated>
+    <updated>2020-06-03T07:10:53.165Z</updated>
     
     <summary type="html">
     
