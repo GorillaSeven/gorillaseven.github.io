@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gorillaseven.github.io/"/>
-  <updated>2020-06-03T07:10:40.522Z</updated>
+  <updated>2020-06-03T07:31:37.544Z</updated>
   <id>http://gorillaseven.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>3.修改数据</title>
-    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/3.%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE/"/>
-    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/3.修改数据/</id>
+    <title>SQL修改数据</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/SQL%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/SQL修改数据/</id>
     <published>2020-06-03T07:02:29.000Z</published>
-    <updated>2020-06-03T07:10:40.522Z</updated>
+    <updated>2020-06-03T07:31:37.544Z</updated>
     
     <summary type="html">
     
@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>2.查询数据</title>
-    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/2.%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE/"/>
-    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/2.查询数据/</id>
+    <title>SQL查询数据</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/SQL%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/SQL查询数据/</id>
     <published>2020-06-03T06:22:29.000Z</published>
-    <updated>2020-06-03T07:02:38.971Z</updated>
+    <updated>2020-06-03T07:31:29.325Z</updated>
     
     <summary type="html">
     
@@ -70,11 +70,11 @@
   </entry>
   
   <entry>
-    <title>1.关系模型</title>
-    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/1.%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/1.关系模型/</id>
+    <title>SQL关系模型</title>
+    <link href="http://gorillaseven.github.io/2020/06/03/Sql%E7%AC%94%E8%AE%B0/SQL%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://gorillaseven.github.io/2020/06/03/Sql笔记/SQL关系模型/</id>
     <published>2020-06-03T05:48:29.000Z</published>
-    <updated>2020-06-03T07:10:44.750Z</updated>
+    <updated>2020-06-03T07:30:35.056Z</updated>
     
     <summary type="html">
     

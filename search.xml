@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[3.修改数据]]></title>
-    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2F3.%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%2F</url>
+    <title><![CDATA[SQL修改数据]]></title>
+    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2FSQL%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[1.InsertINSERT INTO语句用于向表格中插入新的行。 语法: 1Insert into 表名称 values(值1,值2,....) 1Insert into table_name(列1,列2,....) values(值1,值2,...) 2.UpdateUpdate语句用于修改表中的数据。 语法: 1Update 表名称 set 列名称 = 新值 where 列名称 = 某值 3.DeleteDelete语句用于删除表中的行。 语法: 1delete from 表名称 where 列名称 = 值]]></content>
       <categories>
         <category>Sql</category>
@@ -12,8 +12,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.查询数据]]></title>
-    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2F2.%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%2F</url>
+    <title><![CDATA[SQL查询数据]]></title>
+    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2FSQL%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[1.基本查询使用Select查询的基本语句 1select * from &lt;表名&gt; 可以查询一个表的所有行和所有列的数据。得到的结果是一个二维表。 2.条件查询语法： 1select * from &lt;表名&gt; where &lt;条件表达式&gt; 条件表达式如果不加括号，条件运算按照NOT、AND、OR的优先级进行，即NOT的优先级最高，其次是AND，最后是OR。加上括号可以改变优先级。 常用的条件表达式 条件 举例1 举例2 说明 = score=80 name=’abc’ 字符串需要用单引号括起来 &gt; score&gt;80 name&gt;’abc’ 字符串比较根据ASCII码，中文字符比较根据数据库设置 &gt; = score&gt; = 80 name&gt; = ‘abc’ &lt; score&lt;80 name&lt;’abc’ &lt; = score&lt; =80 name&lt; =’abc’ &lt;&gt; score&lt;&gt;80 name&lt;&gt;’abc’ like name like ‘ab%’ name like ‘%bc%’ %表示任意字符，例如’ab%’将匹配’ab’,’abc’,’abcd’ between 在某个范围内 3.投影查询语法: 1select 列1 别名1，列2 别名2，列3 别名3 from &lt;表名&gt; 关键字distinct可以筛选出重复列数据只返回一条。 4.排序Order by用于根据指定的列对结果集进行排序，默认按升序排序(Asc)，可以使用desc关键字进行逆序排序。]]></content>
       <categories>
         <category>Sql</category>
@@ -23,8 +23,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[1.关系模型]]></title>
-    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2F1.%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%2F</url>
+    <title><![CDATA[SQL关系模型]]></title>
+    <url>%2F2020%2F06%2F03%2FSql%E7%AC%94%E8%AE%B0%2FSQL%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[数据库参照数据结构来组织,存储和管理数据。数据库模型主要分为: 。 层次模型 。 网状模型 。 关系模型 1.主键​ 对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段就被称为主键。 选取主键的一个基本原则是：不使用任何业务相关的字段作为主键 作为主键最好是完全业务无关的字段，我们一般吧这个字段命名为id。常见的可作为id字段的类型有： 自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数，这样我们完全不用担心主键重复，也不用自己预先生成主键; 全局唯一GUID类型：使用一种全局唯一的字符串作为主键，类型8f55d96b-8acc-4636-8cb8-76bf8abc2f57。GUID算法通过网卡MAC网址、时间戳和随机数保证计算机任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。 对于大部分应用来说，通常自增类型的主键就能满足需求。 1如果使用INT自增类型，那么一张表的记录数超过2147483647(约21亿)时，会达到上限而出错。使用BIGINT类型的则可以最多约922亿亿条记录。 2.外键​ 通过定义外键约束，关系数据库可以保证无法插入无效的数据。由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠程序自身来保证逻辑的正确性。 3.约束​ 在关系数据库中，如果有上万甚至上亿条记录，在查找记录的时候，想要获得非常快的速度，就需要使用索引。索引是关系数据库中对某一列或多列的值进行预排序的数据结构，通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。 12Alter table studentsAdd INDEX ide_name_score(name,score) 索引的效率取决于索引列的值是否散列，即该列的值如果越互不相同，那么索引效率越高。 可以对一张表创建多个索引。索引的优点是提高了查询效率，缺点是在插入、更新和删除记录时，需要同时修改索引，因此，索引越多，插入、更新和删除记录的速度就越慢。 唯一索引 在设计关系数据表的时候，看上去唯一的列，例如身份证号、邮箱地址等，因为他们具有业务含义，因此不宜作为主键。 但是，这些列根据业务要求，又具有唯一性约束：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个唯一索引。 例如，我们假设students表的name不能重复： 12Alter table studentsAdd UNIQUE INDEX uni_name(name) 通过UNIQUE关键字我们就添加了一个唯一索引。 也可以只对某一列添加一个唯一约束而不创建唯一索引： 12Alter table studentsAdd Constraint uni_name Unique(name) 这种情况下，name列没有索引，但仍然具有唯一性保证。]]></content>
       <categories>
         <category>Sql</category>
