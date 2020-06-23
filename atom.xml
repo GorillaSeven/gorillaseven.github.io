@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gorillaseven.github.io/"/>
-  <updated>2020-06-03T07:31:37.544Z</updated>
+  <updated>2020-06-22T03:41:28.876Z</updated>
   <id>http://gorillaseven.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>账号密码</title>
+    <link href="http://gorillaseven.github.io/2020/06/19/%E5%B7%A5%E4%BD%9C/%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81/"/>
+    <id>http://gorillaseven.github.io/2020/06/19/工作/账号密码/</id>
+    <published>2020-06-19T12:12:10.000Z</published>
+    <updated>2020-06-22T03:41:28.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;个人&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;CSDN账号密码&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="work" scheme="http://gorillaseven.github.io/categories/work/"/>
+    
+    
+      <category term="work" scheme="http://gorillaseven.github.io/tags/work/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL修改数据</title>
@@ -101,8 +132,8 @@
   
   <entry>
     <title>VAssistX快捷键</title>
-    <link href="http://gorillaseven.github.io/2020/05/06/2020-05-06-VAssistX%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://gorillaseven.github.io/2020/05/06/2020-05-06-VAssistX快捷键/</id>
+    <link href="http://gorillaseven.github.io/2020/05/06/VAssistX%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://gorillaseven.github.io/2020/05/06/VAssistX快捷键/</id>
     <published>2020-05-06T06:45:10.000Z</published>
     <updated>2020-05-06T11:54:47.059Z</updated>
     
@@ -131,7 +162,7 @@
     <link href="http://gorillaseven.github.io/2020/04/10/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/"/>
     <id>http://gorillaseven.github.io/2020/04/10/机器人优化方案/</id>
     <published>2020-04-10T08:56:50.351Z</published>
-    <updated>2020-05-25T05:14:34.947Z</updated>
+    <updated>2020-06-12T09:55:55.308Z</updated>
     
     <summary type="html">
     
